@@ -55,7 +55,7 @@
         p.innerHTML =
           'Website By ' +
           '<a class="cypher-credit" href="' + CYPHER_URL + '" target="_blank" rel="noopener" title="Visit Cypher AI">' +
-          '<img class="cypher-credit-logo" src="./cypher-ai-logo.png" alt="Cypher AI logo" />' +
+          '<img class="cypher-credit-logo" src="/cypher-ai-logo.png" alt="Cypher AI logo" />' +
           '<span class="cypher-credit-text">Cypher AI</span></a>';
       }
     }
