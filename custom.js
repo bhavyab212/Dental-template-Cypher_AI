@@ -44,6 +44,11 @@
     }
   }
 
+  /* ---------- 1d. Browser tab title ---------- */
+  function fixTitle() {
+    if (document.title !== 'Modern Dental Clinic') document.title = 'Modern Dental Clinic';
+  }
+
   /* ---------- 1c. Copyright brand -> Cypher AI ---------- */
   function fixRights() {
     if (!document.body || document.body.textContent.indexOf('GlowDent') === -1) return;
@@ -121,7 +126,7 @@
               '<a class="bk-profile" href="./contact">View profile</a>' +
             '</div>' +
           '</div>' +
-          '<div class="bk-ch-line">Consulting hours at Moda Dental Clinic</div>' +
+          '<div class="bk-ch-line">Consulting hours at Just Dental Clinic</div>' +
           '<div class="bk-ch-line2"><b>Mon &ndash; Sat</b><span>09:00 AM &ndash; 01:30 PM</span></div>' +
           '<div class="bk-slotbox">' +
             '<div class="bk-days-row">' +
@@ -142,7 +147,7 @@
   '<p id="bkDoneText"></p>' +
   '<button class="bk-new" id="bkNew" type="button">Choose another slot</button>' +
 '</div>' +
-          '<p class="bk-note">Ratings and reviews shown belong to the doctor across DocIndia &mdash; they are not a rating of Moda Dental Clinic.</p>' +
+          '<p class="bk-note">Ratings and reviews shown belong to the doctor across DocIndia &mdash; they are not a rating of Just Dental Clinic.</p>' +
         '</div>' +
       '</div>'
     );
@@ -506,6 +511,7 @@
       fixLinks();
       fixEmail();
       fixRights();
+      fixTitle();
       fixCredit();
       ffTag();
       ensureBooking();
