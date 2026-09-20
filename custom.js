@@ -44,6 +44,20 @@
     }
   }
 
+  /* ---------- 1c. Copyright brand -> Cypher AI ---------- */
+  function fixRights() {
+    if (!document.body || document.body.textContent.indexOf('GlowDent') === -1) return;
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (n.nodeValue && n.nodeValue.indexOf('GlowDent') !== -1) nodes.push(n);
+    }
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].nodeValue = nodes[i].nodeValue.split('GlowDent').join('Cypher AI');
+    }
+  }
+
   /* ---------- 2. Footer credit -> Cypher AI ---------- */
   function fixCredit() {
     var ps = document.querySelectorAll('p');
@@ -376,18 +390,19 @@
       if (el.classList.contains('ff-cta') || el.classList.contains('ff-nav-dark')) continue;
       var t = (el.innerText || '').replace(/\s+/g, ' ').trim();
       if (/^Book\s/i.test(t)) el.classList.add('ff-cta');
-      else if (/^Contact us/i.test(t)) el.classList.add('ff-nav-dark');
+      else if (/^Contact us/i.test(t)) {
+        // dark pill ONLY for the header nav button - footer links stay plain
+        if (el.closest('nav')) el.classList.add('ff-nav-dark');
+        else el.classList.remove('ff-nav-dark');
+      }
     }
     var svc = document.querySelector('section[data-framer-name="Service Section"]');
     if (svc) {
       var sc = svc.querySelectorAll('[data-framer-name="Vertical Container"]');
       for (var a = 0; a < sc.length; a++) sc[a].classList.add('ff-card');
     }
-    var blog = document.querySelector('section[data-framer-name="Blog Section"]');
-    if (blog) {
-      var bc = blog.querySelectorAll('[data-framer-name="Column"]');
-      for (var b = 0; b < bc.length; b++) bc[b].classList.add('ff-card');
-    }
+    // NOTE: blog Columns intentionally NOT tagged ff-card - its radius/overflow
+    // rules break the card's layered background (white panel artifact on hover)
     var about = document.querySelector('section[data-framer-name="About Section"]');
     if (about) {
       var st = about.querySelectorAll('[data-framer-name="Statistic Item"]');
@@ -406,15 +421,95 @@
     }
   }
 
+  /* ---------- 5. Stats count-up: 0 -> target every time scrolled into view ---------- */
+  var STAT_TARGETS = [98, 5000, 96];
+
+  function statNodes() {
+    var item = document.querySelector('[data-framer-name="Statistic Item"]');
+    if (!item) return [];
+    var out = [];
+    var kids = item.children;
+    for (var i = 0; i < kids.length && i < STAT_TARGETS.length; i++) {
+      var wrap = kids[i].querySelector('[data-framer-name="Wrapper"]');
+      if (!wrap) continue;
+      var h1s = wrap.querySelectorAll('h1');
+      if (!h1s.length) continue;
+      out.push({ idx: i, target: STAT_TARGETS[i] });
+    }
+    return out;
+  }
+
+  function statValue(idx) {
+    var item = document.querySelector('[data-framer-name="Statistic Item"]');
+    if (!item || !item.children[idx]) return null;
+    var h1s = item.children[idx].querySelectorAll('[data-framer-name="Wrapper"] h1');
+    if (!h1s.length) return null;
+    return (h1s[h1s.length - 1].textContent || '').trim();
+  }
+
+  function statWrite(idx, val) {
+    var item = document.querySelector('[data-framer-name="Statistic Item"]');
+    if (!item || !item.children[idx]) return false;
+    var h1s = item.children[idx].querySelectorAll('[data-framer-name="Wrapper"] h1');
+    if (!h1s.length) return false;
+    h1s[h1s.length - 1].textContent = val;
+    return true;
+  }
+
+  var statToken = 0;
+  function animateStat(idx, target, token, dur) {
+    var t0 = null;
+    function frame(ts) {
+      if (token !== statToken) return;
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      var e = 1 - Math.pow(1 - p, 3);
+      if (!statWrite(idx, String(Math.round(target * e)))) return;
+      if (p < 1) requestAnimationFrame(frame);
+      else statWrite(idx, String(target));
+    }
+    statWrite(idx, '0');
+    requestAnimationFrame(frame);
+  }
+
+  function watchStats() {
+    var item = document.querySelector('[data-framer-name="Statistic Item"]');
+    if (!item || item.dataset.statWatched || !window.IntersectionObserver) return;
+    item.dataset.statWatched = '1';
+    var busy = false;
+    var io = new IntersectionObserver(function (entries) {
+      for (var k = 0; k < entries.length; k++) {
+        if (!entries[k].isIntersecting || busy) continue;
+        busy = true;
+        var nodes = statNodes();
+        if (!nodes.length) { busy = false; continue; }
+        var first = statValue(nodes[0].idx);
+        setTimeout(function () {
+          var now = statValue(nodes[0].idx);
+          var my = ++statToken;
+          if (now === first) {
+            // value static: Framer trigger dead or already final -> play our 0 -> N
+            for (var i = 0; i < nodes.length; i++) animateStat(nodes[i].idx, nodes[i].target, my, 1600);
+          }
+          // else Framer is counting live right now -> let it finish, skip replay this entry
+          setTimeout(function () { if (my === statToken) busy = false; }, 1800);
+        }, 700);
+      }
+    }, { threshold: 0.4 });
+    io.observe(item);
+  }
+
   /* ---------- run ---------- */
   var scheduled = false;
   function applyAll() {
     try {
       fixLinks();
       fixEmail();
+      fixRights();
       fixCredit();
       ffTag();
       ensureBooking();
+      watchStats();
     } catch (e) { /* never break host page */ }
   }
   function schedule() {

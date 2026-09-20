@@ -7,7 +7,8 @@
     "dev": "vite --port 3000 --host",
     "build": "vite build",
     "preview": "vite preview --port 3000 --host",
-    "start": "vite preview --port 3000 --host"
+    "start": "vite preview --port 3000 --host",
+    "test:ui": "node tests/ui-check.cjs"
   },
   "devDependencies": {
     "playwright-core": "^1.63.0",

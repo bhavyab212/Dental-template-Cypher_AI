@@ -1,0 +1,298 @@
+{
+  "desktop": {
+    "current": {
+      "hOverflow": 0,
+      "clipped": [
+        {
+          "where": null,
+          "tag": "p",
+          "text": "“Clean clinic, modern equipment, and friendly staff made my ",
+          "why": "viewport-edge",
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "overlaps": [
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #405; visit https://reactjs.org/docs/error-decode"
+      ]
+    },
+    "baseline": {
+      "hOverflow": 0,
+      "clipped": [
+        {
+          "where": null,
+          "tag": "p",
+          "text": "“Clean clinic, modern equipment, and friendly staff made my ",
+          "why": "viewport-edge",
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "overlaps": [
+        {
+          "a": "Book An Appointment",
+          "b": "Book An Appointment"
+        },
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #418; visit https://reactjs.org/docs/error-decode",
+        "Minified React error #423; visit https://reactjs.org/docs/error-decode"
+      ]
+    }
+  },
+  "wide": {
+    "current": {
+      "hOverflow": 0,
+      "clipped": [
+        {
+          "where": null,
+          "tag": "p",
+          "text": "James Wilson",
+          "why": "viewport-edge",
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "where": null,
+          "tag": "p",
+          "text": "“Clean clinic, modern equipment, and friendly staff made my ",
+          "why": "viewport-edge",
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "overlaps": [
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #405; visit https://reactjs.org/docs/error-decode"
+      ]
+    },
+    "baseline": {
+      "hOverflow": 0,
+      "clipped": [
+        {
+          "where": null,
+          "tag": "p",
+          "text": "James Wilson",
+          "why": "viewport-edge",
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "where": null,
+          "tag": "p",
+          "text": "“Clean clinic, modern equipment, and friendly staff made my ",
+          "why": "viewport-edge",
+          "dx": 0,
+          "dy": 0
+        }
+      ],
+      "overlaps": [
+        {
+          "a": "Book An Appointment",
+          "b": "Book An Appointment"
+        },
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #418; visit https://reactjs.org/docs/error-decode",
+        "Minified React error #423; visit https://reactjs.org/docs/error-decode"
+      ]
+    }
+  },
+  "tablet": {
+    "current": {
+      "hOverflow": 0,
+      "clipped": [],
+      "overlaps": [
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #405; visit https://reactjs.org/docs/error-decode"
+      ]
+    },
+    "baseline": {
+      "hOverflow": 0,
+      "clipped": [],
+      "overlaps": [
+        {
+          "a": "Book An Appointment",
+          "b": "Book An Appointment"
+        },
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #418; visit https://reactjs.org/docs/error-decode",
+        "Minified React error #423; visit https://reactjs.org/docs/error-decode"
+      ]
+    }
+  },
+  "mobile": {
+    "current": {
+      "hOverflow": 0,
+      "clipped": [],
+      "overlaps": [
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #405; visit https://reactjs.org/docs/error-decode"
+      ]
+    },
+    "baseline": {
+      "hOverflow": 0,
+      "clipped": [],
+      "overlaps": [
+        {
+          "a": "Book An Appointment",
+          "b": "Book An Appointment"
+        },
+        {
+          "a": "Home",
+          "b": "Home"
+        }
+      ],
+      "brokenImgs": [],
+      "emptyButtons": [
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr",
+        "framer-mwMxg framer-bt8zje framer-v-bt8zje framer-1qz3skr"
+      ],
+      "pageErrors": [
+        "Minified React error #418; visit https://reactjs.org/docs/error-decode",
+        "Minified React error #423; visit https://reactjs.org/docs/error-decode"
+      ]
+    }
+  }
+}
