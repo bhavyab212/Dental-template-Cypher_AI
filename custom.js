@@ -46,7 +46,7 @@
 
   /* ---------- 1d. Browser tab title ---------- */
   function fixTitle() {
-    if (document.title !== 'Modern Dental Clinic') document.title = 'Modern Dental Clinic';
+    if (document.title !== 'Dental Clinic') document.title = 'Dental Clinic';
   }
 
   /* ---------- 1c. Copyright brand -> Cypher AI ---------- */
@@ -82,7 +82,7 @@
 
   /* ---------- 3. Booking redesign ---------- */
   var DOCTORS = [
-    'Dr. Aman Moda',
+    'Dr. Ram Prasadh',
     'Dr. Sophia Miller',
     'Dr. Daniel Wilson',
     'Dr. Michael Carter',
@@ -111,9 +111,9 @@
         '<div class="bk-card bk-doc">' +
           '<div class="bk-doc-top">' +
             '<div class="bk-doc-id">' +
-              '<div class="bk-avatar">AM</div>' +
+              '<div class="bk-avatar">RP</div>' +
               '<div class="bk-doc-meta">' +
-                '<div class="bk-doc-name">Dr. Aman Moda ' +
+                '<div class="bk-doc-name">Dr. Ram Prasadh ' +
                 '<svg class="bk-verified" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#1a9e54"/><path d="M8.5 12.2l2.4 2.4 4.6-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
                 '<div class="bk-doc-spec">MDS &ndash; Pediatric Dentist</div>' +
                 '<div class="bk-tags"><span>Dentist</span><span>Pediatric Dentistry</span><span>Dental Surgery</span></div>' +
@@ -126,7 +126,7 @@
               '<a class="bk-profile" href="./contact">View profile</a>' +
             '</div>' +
           '</div>' +
-          '<div class="bk-ch-line">Consulting hours at Just Dental Clinic</div>' +
+          '<div class="bk-ch-line">Consulting hours at Dental Clinic</div>' +
           '<div class="bk-ch-line2"><b>Mon &ndash; Sat</b><span>09:00 AM &ndash; 01:30 PM</span></div>' +
           '<div class="bk-slotbox">' +
             '<div class="bk-days-row">' +
@@ -138,16 +138,16 @@
             '<div class="bk-group"><h4>Afternoon</h4><div class="bk-slots" id="bkAfternoon"></div></div>' +
           '</div>' +
           '<div class="bk-confirm" id="bkConfirm" hidden>' +
-  '<div><small>Selected slot</small><b id="bkSelText"></b></div>' +
-  '<button class="bk-go" id="bkGo" type="button"><span>Confirm Appointment</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+  '<div><small>Selected slot</small><b id=\"bkSelText\"></b></div>' +
+  '<button class=\"bk-go\" id=\"bkGo\" type=\"button\"><span>Confirm Appointment</span><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M7 17L17 7M17 7H8M17 7v9\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>' +
 '</div>' +
-'<div class="bk-done" id="bkDone" hidden>' +
-  '<div class="bk-check"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1a9e54"/><path d="M8 12.5l2.7 2.7L16 9.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
+'<div class=\"bk-done\" id=\"bkDone\" hidden>' +
+  '<div class=\"bk-check\"><svg width=\"34\" height=\"34\" viewBox=\"0 0 24 24\" fill=\"none\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"#1a9e54\"/><path d=\"M8 12.5l2.7 2.7L16 9.5\" stroke=\"#fff\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div>' +
   '<h3>Appointment Confirmed!</h3>' +
-  '<p id="bkDoneText"></p>' +
-  '<button class="bk-new" id="bkNew" type="button">Choose another slot</button>' +
+  '<p id=\"bkDoneText\"></p>' +
+  '<button class=\"bk-new\" id=\"bkNew\" type=\"button\">Choose another slot</button>' +
 '</div>' +
-          '<p class="bk-note">Ratings and reviews shown belong to the doctor across DocIndia &mdash; they are not a rating of Just Dental Clinic.</p>' +
+          '<p class=\"bk-note\">Ratings and reviews shown belong to the doctor across DocIndia &mdash; they are not a rating of Dental Clinic.</p>' +
         '</div>' +
       '</div>'
     );
@@ -259,7 +259,7 @@
           timeEl.classList.add('bk-flash');
         }
         if (dateEl) dateEl.value = bkDays[bkSelectedDay].iso;
-        if (docEl) docEl.value = 'Dr. Aman Moda';
+        if (docEl) docEl.value = 'Dr. Ram Prasadh';
         renderSlots();
       });
     };
@@ -318,7 +318,7 @@
         var form2 = document.getElementById('bkForm');
         form2.reset();
         var docEl = document.getElementById('bkDoctor');
-        if (docEl) docEl.value = 'Dr. Aman Moda';
+        if (docEl) docEl.value = 'Dr. Ram Prasadh';
         bkSelectedSlot = null;
         renderSlots();
         document.getElementById('bkSuccess').hidden = true;
@@ -349,7 +349,7 @@
         var d = bkDays[bkSelectedDay], tt = slotTimes()[bkSelectedSlot];
         var nice = d.date.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
         var p = document.getElementById('bkDoneText');
-        if (p) p.textContent = 'Dr. Aman Moda \u00B7 ' + nice + ' at ' + fmtTime12(tt[0], tt[1]) + ' \u00B7 Consultation \u20B9 100 (pay at clinic). Please arrive 10 minutes early.';
+        if (p) p.textContent = 'Dr. Ram Prasadh \u00B7 ' + nice + ' at ' + fmtTime12(tt[0], tt[1]) + ' \u00B7 Consultation \u20B9 100 (pay at clinic). Please arrive 10 minutes early.';
         var done = document.getElementById('bkDone');
         if (done) { done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
       });
