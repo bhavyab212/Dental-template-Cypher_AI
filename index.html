@@ -12557,6 +12557,229 @@ section[data-framer-name='CTA'] a[href*='instagram.com']:hover {
   }
 }
 
+/* ===== Mobile parity fixes: phone vs desktop (added Sep 2026) ===== */
+/* Booking widget must shrink inside Framer's flex containers on all sizes */
+.bk-wrap {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  flex: 1 1 auto !important;
+}
+section[data-framer-name="CTA"] [data-framer-name="Container"],
+section[data-framer-name="CTA"] .framer-e8iqv1 {
+  min-width: 0 !important;
+}
+.bk-card {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+.bk-doc-meta {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+.bk-slotbox {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+.bk-days {
+  min-width: 0 !important;
+}
+.bk-slots {
+  min-width: 0 !important;
+}
+.bk-slot {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 809.98px) {
+  /* 1. Stats bar: tighter vertical rhythm to match desktop density */
+  [data-framer-name="Statistic Item"] {
+    gap: 20px !important;
+  }
+  .ff-stat {
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 18px !important;
+  }
+
+  /* 2. Your / Smile / Arrow / Matters: same order as desktop (Arrow before Matters) */
+  /* Framer ships mobile with order 0,1,3,2 — restore desktop 0,1,2,3 */
+  .framer-1idwet3 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+  .framer-1idwet3 .framer-c1ydag {
+    order: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .framer-1idwet3 .framer-blew37 {
+    order: 1 !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .framer-1idwet3 .framer-urn4n2 {
+    order: 2 !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .framer-1idwet3 .framer-1k488m1 {
+    order: 3 !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .framer-1idwet3 [style*="opacity"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* 4. Booking widget: fluid phone layout */
+  .bk-wrap {
+    max-width: 100% !important;
+    padding: 12px 12px 8px !important;
+  }
+  section[data-framer-name="CTA"] [data-framer-name="Container"],
+  section[data-framer-name="CTA"] .framer-e8iqv1 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .bk-card {
+    padding: 18px 14px !important;
+    border-radius: 16px !important;
+  }
+  .bk-doc-top {
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+  .bk-doc-id {
+    width: 100% !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  .bk-avatar {
+    width: 64px !important;
+    height: 64px !important;
+    font-size: 22px !important;
+    flex: none !important;
+  }
+  .bk-doc-name {
+    font-size: 19px !important;
+    line-height: 1.2 !important;
+  }
+  .bk-tags {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .bk-tags span {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+    white-space: nowrap !important;
+  }
+  .bk-fee {
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .bk-ch-line2 {
+    flex-wrap: wrap !important;
+    gap: 8px 20px !important;
+  }
+  .bk-slotbox {
+    width: 100% !important;
+    padding: 14px 10px !important;
+  }
+  .bk-days-row {
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  .bk-days {
+    flex: 1 !important;
+    gap: 8px !important;
+  }
+  .bk-day {
+    width: 72px !important;
+    min-width: 72px !important;
+    padding: 8px 4px 6px !important;
+  }
+  .bk-dnum {
+    font-size: 18px !important;
+  }
+  .bk-slots {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .bk-slot {
+    width: 100% !important;
+    font-size: 13px !important;
+    padding: 12px 4px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .bk-confirm {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+  }
+  .bk-go {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* 5. Dental problems: restore markings on phone teeth image */
+  .framer-1ozqpfs {
+    position: relative !important;
+  }
+}
+
+/* Dental pins overlay (mobile teeth image, mirrors desktop connector dots) */
+.dental-pins {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+}
+.dental-pin {
+  position: absolute !important;
+  transform: translate(-50%, -50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background: #1373d5 !important;
+  color: #fff !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 2px 8px rgba(10, 15, 50, 0.35) !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  font-family: inherit !important;
+}
+.dental-pin::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -6px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(19, 115, 213, 0.45) !important;
+  animation: dental-ping 2.2s ease-out infinite !important;
+}
+@keyframes dental-ping {
+  0% { transform: scale(0.7); opacity: 1; }
+  100% { transform: scale(1.25); opacity: 0; }
+}
+
     </style>
 </head>
   <body>

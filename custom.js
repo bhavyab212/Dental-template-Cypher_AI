@@ -82,7 +82,7 @@
 
   /* ---------- 3. Booking redesign ---------- */
   var DOCTORS = [
-    'Dr. Ram Prasadh',
+    'Dr. Xyz',
     'Dr. Sophia Miller',
     'Dr. Daniel Wilson',
     'Dr. Michael Carter',
@@ -111,9 +111,9 @@
         '<div class="bk-card bk-doc">' +
           '<div class="bk-doc-top">' +
             '<div class="bk-doc-id">' +
-              '<div class="bk-avatar">RP</div>' +
+              '<div class="bk-avatar">DX</div>' +
               '<div class="bk-doc-meta">' +
-                '<div class="bk-doc-name">Dr. Ram Prasadh ' +
+                '<div class="bk-doc-name">Dr. Xyz ' +
                 '<svg class="bk-verified" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#1a9e54"/><path d="M8.5 12.2l2.4 2.4 4.6-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
                 '<div class="bk-doc-spec">MDS &ndash; Pediatric Dentist</div>' +
                 '<div class="bk-tags"><span>Dentist</span><span>Pediatric Dentistry</span><span>Dental Surgery</span></div>' +
@@ -259,7 +259,7 @@
           timeEl.classList.add('bk-flash');
         }
         if (dateEl) dateEl.value = bkDays[bkSelectedDay].iso;
-        if (docEl) docEl.value = 'Dr. Ram Prasadh';
+        if (docEl) docEl.value = 'Dr. Xyz';
         renderSlots();
       });
     };
@@ -318,7 +318,7 @@
         var form2 = document.getElementById('bkForm');
         form2.reset();
         var docEl = document.getElementById('bkDoctor');
-        if (docEl) docEl.value = 'Dr. Ram Prasadh';
+        if (docEl) docEl.value = 'Dr. Xyz';
         bkSelectedSlot = null;
         renderSlots();
         document.getElementById('bkSuccess').hidden = true;
@@ -349,7 +349,7 @@
         var d = bkDays[bkSelectedDay], tt = slotTimes()[bkSelectedSlot];
         var nice = d.date.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
         var p = document.getElementById('bkDoneText');
-        if (p) p.textContent = 'Dr. Ram Prasadh \u00B7 ' + nice + ' at ' + fmtTime12(tt[0], tt[1]) + ' \u00B7 Consultation \u20B9 100 (pay at clinic). Please arrive 10 minutes early.';
+        if (p) p.textContent = 'Dr. Xyz \u00B7 ' + nice + ' at ' + fmtTime12(tt[0], tt[1]) + ' \u00B7 Consultation \u20B9 100 (pay at clinic). Please arrive 10 minutes early.';
         var done = document.getElementById('bkDone');
         if (done) { done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
       });
@@ -504,6 +504,49 @@
     io.observe(item);
   }
 
+  /* ---------- 6. Dental pins on mobile teeth image (restore desktop markings) ---------- */
+  function ensureDentalPins() {
+    var host = document.querySelector('.framer-1ozqpfs');
+    if (!host || host.querySelector('.dental-pins')) return;
+    var spots = [
+      { n: '01', x: 30, y: 38, t: 'Cavities' },
+      { n: '02', x: 71, y: 38, t: 'Gingivitis' },
+      { n: '03', x: 26, y: 57, t: 'Plaque' },
+      { n: '04', x: 74, y: 57, t: 'Sensitivity' },
+      { n: '05', x: 36, y: 71, t: 'Crowding' },
+      { n: '06', x: 60, y: 71, t: 'Staining' }
+    ];
+    host.style.position = 'relative';
+    var wrap = document.createElement('div');
+    wrap.className = 'dental-pins';
+    wrap.setAttribute('aria-hidden', 'false');
+    for (var i = 0; i < spots.length; i++) {
+      (function (s) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'dental-pin';
+        b.style.left = s.x + '%';
+        b.style.top = s.y + '%';
+        b.textContent = s.n;
+        b.title = s.t;
+        b.setAttribute('aria-label', s.n + ' ' + s.t);
+        b.addEventListener('click', function () {
+          var sec = document.querySelector('section[data-framer-name="Section"]');
+          if (!sec) return;
+          var titles = sec.querySelectorAll('[data-framer-name="Title"]');
+          for (var k = 0; k < titles.length; k++) {
+            if ((titles[k].innerText || '').indexOf(s.t) !== -1) {
+              titles[k].scrollIntoView({ behavior: 'smooth', block: 'center' });
+              break;
+            }
+          }
+        });
+        wrap.appendChild(b);
+      })(spots[i]);
+    }
+    host.appendChild(wrap);
+  }
+
   /* ---------- run ---------- */
   var scheduled = false;
   function applyAll() {
@@ -515,6 +558,7 @@
       fixCredit();
       ffTag();
       ensureBooking();
+      ensureDentalPins();
       watchStats();
     } catch (e) { /* never break host page */ }
   }
