@@ -5,6 +5,7 @@
   var X_URL = 'https://x.com/Priyans90072914';
   var IN_URL = 'https://www.linkedin.com/in/priyansh-razz-293154372/';
   var IG_URL = 'https://www.instagram.com/thepriyansh06';
+  var WA_URL = 'https://wa.me/919080083202';
   var CYPHER_URL = 'https://www.cypherai.in/';
   var EMAIL_OLD = 'glowdent@gmail.com';
   var EMAIL_NEW = 'info@dentel.com';
@@ -24,6 +25,8 @@
         if (a.href !== IG_URL) a.href = IG_URL;
       } else if (h.indexOf('framer.com/@alev-web') !== -1) {
         if (a.href !== CYPHER_URL) a.href = CYPHER_URL;
+      } else if (h.indexOf('wa.me/') !== -1 || h.indexOf('whatsapp.com/') !== -1 || h.indexOf('api.whatsapp.com/') !== -1) {
+        if (a.href !== WA_URL) a.href = WA_URL;
       } else if (h.toLowerCase().indexOf('glowdent@gmail.com') !== -1) {
         a.setAttribute('href', h.replace(/glowdent@gmail\.com/i, EMAIL_NEW));
       }
